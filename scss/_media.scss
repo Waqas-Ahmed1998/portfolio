@@ -1,0 +1,145 @@
+@media (max-width: 767px) {
+  header {
+    .container {
+      #navbar {
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 0.5rem;
+        text-align: center;
+
+        ul {
+          justify-self: center;
+        }
+      }
+    }
+
+    &.ab-header {
+      background-position-y: 20%;
+      height: 18vh;
+    }
+  }
+
+  #landing {
+    .content {
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      p {
+        text-align: center;
+      }
+    }
+  }
+
+  #specialize {
+    .container {
+      .feilds {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  #achievements {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  #creative {
+    .grid {
+      grid-template-columns: 1fr;
+      padding: 0 !important;
+    }
+  }
+
+  footer {
+    padding: 1rem 2rem;
+    .flex {
+      flex-direction: column;
+      padding: 0.5rem 0 !important;
+
+      ul {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  #about-me {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  #testimonials {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  #images {
+    .container > p:nth-child(even) {
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    padding: 0rem 0rem !important;
+    .grid {
+      padding: 0.5rem;
+      grid-template-columns: 1fr;
+      grid-gap: 0.5rem;
+
+      .image-1 {
+        height: 400px;
+      }
+      .image-2 {
+        height: 400px;
+      }
+      .image-3 {
+        height: 400px;
+      }
+      .image-4 {
+        height: 400px;
+      }
+      .image-5 {
+        height: 400px;
+      }
+      .image-6 {
+        height: 400px;
+      }
+      .image-7 {
+        height: 400px;
+      }
+      .image-8 {
+        height: 400px;
+      }
+      .image-9 {
+        height: 400px;
+      }
+    }
+  }
+
+  #contact {
+    form {
+      padding: 1rem 0;
+    }
+    padding: 1rem;
+    .input-area {
+      padding: 0;
+      textarea {
+        width: 99%;
+      }
+    }
+
+    .grid {
+      grid-gap: 0.5rem;
+      grid-template-columns: 1fr;
+
+      .input {
+        input {
+          width: 99%;
+        }
+      }
+    }
+  }
+}

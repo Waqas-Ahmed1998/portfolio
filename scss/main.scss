@@ -1,0 +1,574 @@
+@import 'functions';
+@import 'veriables';
+@import 'media';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Dosis', sans-serif;
+}
+// utilities classes
+
+li {
+  list-style: none;
+}
+.a-text {
+  cursor: text;
+  position: relative;
+}
+
+.pad {
+  &-1 {
+    padding: 1rem;
+  }
+  &-y {
+    padding: 1rem 0;
+  }
+}
+
+.bottom-line {
+  width: 3rem;
+  height: 2px;
+  margin: 0 auto 1rem auto;
+  background-color: gold;
+}
+.mar {
+  &-b {
+    margin-bottom: 1rem;
+
+    &-2 {
+      margin-bottom: 2rem;
+    }
+  }
+  &-top {
+    margin-top: 1rem;
+  }
+}
+a {
+  color: black;
+}
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  padding: 0 1rem;
+
+  h1 {
+    font-weight: 400;
+    font-style: italic;
+    font-family: 'Lobster', cursive;
+    color: #f4f4f4;
+  }
+  ul {
+    display: flex;
+
+    li {
+      list-style: none;
+      padding: 1rem;
+    }
+    a {
+      text-decoration: none;
+      color: #f4f4f4;
+      padding: 1rem 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease-in-out;
+
+      &:hover {
+        border-bottom: 2px solid yellow;
+      }
+
+      &.current {
+        border-bottom: 2px solid yellow;
+      }
+    }
+  }
+}
+// Landing part
+
+#landing {
+  background: url(/img/showcase.jpg) no-repeat center center/cover;
+  height: 100vh;
+
+  .content {
+    h1 {
+      font-size: 2.8rem;
+    }
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgba($color: #000000, $alpha: 0.1);
+  }
+}
+
+%btn {
+  display: inline-block;
+  padding: 0.7rem 0.5rem;
+  cursor: pointer;
+  margin-top: 1.2rem;
+  border: none;
+}
+.btn {
+  transition: 0.1s ease-in-out;
+  border-radius: 5px;
+  background-color: lightgray;
+  @extend %btn;
+  &-gray {
+    @extend %btn;
+    &:hover {
+      background-color: #333;
+      color: #f4f4f4;
+    }
+  }
+}
+a {
+  text-decoration: none;
+}
+// Specialize section
+
+#specialize {
+  padding: 1rem;
+  background-color: white;
+  .container {
+    .s-text {
+      text-align: center;
+      padding-bottom: 2rem;
+      font-family: 'Lobster', cursive;
+      word-spacing: 5px;
+      font-size: 1.3rem;
+    }
+    .s-heading {
+      text-align: center;
+      padding: 1rem;
+      a {
+        position: relative;
+        color: $dark-color;
+        cursor: text;
+
+        &::after {
+          @include after();
+        }
+      }
+    }
+    .feilds {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1rem;
+      padding: 1rem 0;
+      .item {
+        text-align: center;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+        padding: 1rem;
+        &:nth-child(1n + 1):hover {
+          box-shadow: $box-shadow;
+          border-bottom-right-radius: 10px;
+          border-top-left-radius: 30%;
+          background-color: $bg-light-1;
+        }
+        a {
+          color: tomato;
+        }
+      }
+    }
+  }
+}
+.bg-light {
+  &-1 {
+    background-color: $bg-light-1;
+  }
+  &-2 {
+    background-color: $bg-light-2;
+  }
+}
+// Achievements Sections
+
+#achievements {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    .items {
+      text-align: center;
+      padding: 3.5rem;
+    }
+  }
+}
+
+// section Creative
+
+#creative {
+  padding: 1rem 1rem 2rem;
+
+  .container > h2,
+  .container > p {
+    text-align: center;
+  }
+
+  .a-text::after {
+    @include after();
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    padding: 1rem;
+    grid-gap: 1rem;
+
+    .icon {
+      position: relative;
+      color: white;
+      padding: 1rem 1.5rem;
+      background-color: #333;
+      border-radius: 100%;
+      align-self: center;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        padding: 1.5rem 2rem;
+        background-color: lightgoldenrodyellow;
+        cursor: pointer;
+        color: #333;
+
+        .notification {
+          background-color: gold;
+          padding: 0.5rem 0.8rem;
+        }
+      }
+    }
+
+    .notification {
+      position: absolute;
+      padding: 0.2rem 0.5rem;
+      background-color: $bg-light-2;
+      border-radius: 100%;
+      top: 5px;
+      font-size: 1rem;
+      transition: 0.3s ease-in-out;
+    }
+  }
+}
+
+footer {
+  padding: 1rem 5rem;
+  background-color: #333;
+  color: white;
+
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      i {
+        padding: 0.5rem;
+        border-radius: 100%;
+        border: 1px solid white;
+        margin-left: 10px;
+        transition: 0.2s ease-in-out;
+
+        &:hover {
+          background-color: lightgoldenrodyellow;
+          color: #333;
+        }
+      }
+    }
+  }
+}
+
+// About page
+
+.ab-header {
+  background: url(/img/showcase.jpg) no-repeat 20% 30% / cover;
+  position: relative;
+}
+
+#about-me {
+  background-color: white;
+  padding: 2rem;
+  .container > h2,
+  .container > p {
+    text-align: center;
+  }
+
+  .a-text::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 2.5rem;
+    height: 2px;
+    bottom: -10px;
+    right: 30%;
+    background-color: gold;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    grid-gap: 1rem;
+
+    .project {
+      background-color: #f6f6f6;
+      text-align: center;
+      padding: 0.5rem;
+      border-left: 3px solid gold;
+    }
+    .image {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+#skills {
+  background-color: #444;
+  color: white;
+  padding: 2rem 1rem;
+  .container > h2 {
+    text-align: center;
+  }
+  .a-text {
+    color: #f4f4f4;
+  }
+  .a-text::after {
+    @include after();
+  }
+
+  .progress {
+    background-color: #333;
+    height: 10px;
+    border-radius: 10px;
+
+    div {
+      background-color: yellow;
+      height: 100%;
+      border-radius: 10px;
+    }
+  }
+}
+
+// #logo
+
+#logo {
+  padding: 3rem;
+  // background-color: #f7f7f7;
+
+  .image {
+    background: url(/img/Mern.jpg) no-repeat center center/cover;
+    height: 300px;
+    padding: 1rem;
+    box-shadow: $box-shadow;
+  }
+}
+// Testimonials
+
+#testimonials {
+  padding: 1rem;
+
+  .container > h2,
+  .container > h4 {
+    text-align: center;
+  }
+  .a-text::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 2.5rem;
+    height: 2px;
+    bottom: -10px;
+    right: 35%;
+    background-color: gold;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+
+    .content {
+      border: 1px solid gray;
+      padding: 0.5rem;
+      border-radius: 5px;
+    }
+
+    .image {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.round {
+  width: 60px;
+  border-radius: 100%;
+  padding: 0.4rem;
+}
+
+// #work page
+
+#images {
+  padding: 2rem 1rem;
+
+  .container > h2,
+  .container > p {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .container > p:nth-child(even) {
+    font-style: italic;
+  }
+  .a-text::after {
+    @include after();
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    .image-1 {
+      background: url(/img/items/item1.png) no-repeat center center/cover;
+      height: 300px;
+      overflow: hidden;
+      @include overlay();
+    }
+    .image-2 {
+      height: 300px;
+      overflow: hidden;
+      background: url(/img/items/item2.png) no-repeat center center/cover;
+      overflow: hidden;
+      @include overlay();
+    }
+
+    .image-3 {
+      background: url(/img/items/item3.png) no-repeat center center/cover;
+      height: 300px;
+      overflow: hidden;
+      @include overlay();
+    }
+    .image-4 {
+      background: url(/img/items/item4.png) no-repeat center center/cover;
+      height: 300px;
+      overflow: hidden;
+      @include overlay();
+    }
+    .image-5 {
+      background: url(/img/items/item5.png) no-repeat center center/cover;
+      height: 300px;
+      overflow: hidden;
+      @include overlay();
+    }
+    .image-6 {
+      background: url(/img/items/item6.png) no-repeat center center/cover;
+      height: 300px;
+      overflow: hidden;
+      @include overlay();
+    }
+    .image-7 {
+      background: url(/img/items/item7.png) no-repeat center center/cover;
+      height: 300px;
+      overflow: hidden;
+      @include overlay();
+    }
+    .image-8 {
+      background: url(/img/items/item8.png) no-repeat center center/cover;
+      height: 300px;
+      overflow: hidden;
+
+      @include overlay();
+    }
+    .image-9 {
+      background: url(/img/items/item9.png) no-repeat center center/cover;
+      height: 300px;
+      overflow: hidden;
+      @include overlay();
+    }
+  }
+}
+
+// Contact Page
+
+#contact {
+  padding: 2rem 1rem 3rem;
+
+  .container > h2,
+  .container > p {
+    text-align: center;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.5rem;
+    margin-bottom: 1rem;
+
+    .input {
+      input {
+        width: 100%;
+        padding: 0.5rem;
+      }
+    }
+  }
+  .input-area {
+    textarea {
+      width: 100%;
+      padding: 0.5rem;
+    }
+    margin-bottom: 1rem;
+  }
+  .button {
+    width: 70%;
+    margin: 0 auto;
+    button {
+      display: inline-block;
+      width: 100%;
+      background-color: #333;
+      color: white;
+      padding: 0.5rem;
+      cursor: pointer;
+      &:hover {
+        transition: 0.2s ease-in;
+        background-color: #444;
+      }
+    }
+  }
+}
+
+#location {
+  padding: 2rem 1rem;
+  background-color: #333;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    color: white;
+  }
+}
+
+#project {
+  padding: 2rem;
+  background-color: gold;
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+}
+
+@import 'media';

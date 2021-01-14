@@ -1,0 +1,9 @@
+$navbar-color: #8b1a1a;
+$dark-color: black;
+$bg-light-1: #f5f0f0;
+$bg-light-2: #f1dddb;
+$box-shadow: 1px 1px 4px #333;
+@mixin sqew($property) {
+  transform: $property;
+  transform: translate3d(5px);
+}
