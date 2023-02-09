@@ -232,8 +232,8 @@ header {
 }
 
 #landing {
-  background: url(/img/showcase.jpg) no-repeat center center/cover;
-  height: 100vh;
+  background: url(../../img/about.jpg) no-repeat center center/cover;
+  height: 90vh;
 }
 
 #landing .content {
